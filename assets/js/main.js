@@ -1,6 +1,6 @@
 const kartaEdukiontzia = document.querySelector("#karta-edukiontzia");
 const kartaEgoera = document.querySelector("#karta-egoera");
-const API_KARTA_HELBIDEA = "http://localhost:5056/api/karta";
+const API_KARTA_HELBIDEA = "http://192.168.10.5:5005/api/karta";
 const AZKEN_UNITATEAK_MUGA = 3;
 const pantailak = document.querySelectorAll("[data-pantaila]");
 const pantailaLoturak = document.querySelectorAll("[data-pantaila-helburua]");
