@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Maison Imanol: sukaldaritza zaindua, giro dotorea eta online ikus daitekeen karta."
+  >
+  <title>Maison Imanol | Jatetxea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <nav class="nabigazioa nabigazioa-finkoa">
+    <div class="nabigazioa-barrua">
+      <a class="marka" href="#" data-pantaila-helburua="hasiera">Maison Imanol</a>
+      <div class="nabigazio-estekak">
+        <a href="#hasiera" data-pantaila-helburua="hasiera">Hasiera</a>
+        <a href="#karta" data-pantaila-helburua="karta">Karta</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pantaila-edukitzailea">
+    <section class="pantaila pantaila-aktiboa azala" id="hasiera" data-pantaila="hasiera">
+      <div class="hero-panela">
+        <div class="hasiera-eredua">
+          <div class="azal-edukia">
+            <p class="goiburuxka">Maison Imanol</p>
+            <h1>Tradizioa eta dotorezia, modu garaikidean</h1>
+            <p class="azal-testua">
+              Sukaldaritza zaindua, giro beroa eta xehetasun guztietan pentsatutako
+              esperientzia. Hasierako informazioa panel zabalgarrietan antolatu
+              dugu eta karta ikuspegi propio batean utzi dugu.
+            </p>
+            <div class="azal-ekintzak">
+              <a class="botoia botoia-lehena" href="#karta" data-pantaila-helburua="karta">Karta Ikusi</a>
+              <a class="botoia botoia-bigarrena" href="#informazioa">Jatetxea Ezagutu</a>
+            </div>
+          </div>
+
+          <aside class="azal-albokoa">
+            <div class="laburpen-txartela">
+              <p class="laburpen-etiketa">Gaurko esperientzia</p>
+              <h2>Sasoiko sukaldaritza eta arreta zaindua</h2>
+              <div class="laburpen-zerrenda">
+                <p><strong>Ordutegia</strong> 13:00 - 23:00</p>
+                <p><strong>Erreserbak</strong> +34 600 000 000</p>
+                <p><strong>Kokapena</strong> Kale Nagusia 123, Hiria</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <section class="atal akordeoi-atala" id="informazioa">
+        <div class="atal-goiburua atal-goiburua-zabala">
+          <p class="goiburuxka">Informazioa</p>
+          <h2>Gure jatetxea, modu argi eta elegantean</h2>
+          <p class="atal-testua">
+            Behar duzun guztia atal tolesgarrietan antolatuta, gainkargarik gabe.
+          </p>
+        </div>
+
+        <div class="akordeoi-multzoa">
+          <details class="akordeoi-elementua" open>
+            <summary>Gure izaera</summary>
+            <div class="akordeoi-edukia">
+              <p>
+                Osagai fresko eta sasoikoekin lan egiten dugu, sukaldaritza
+                zaindua, zaporetsua eta xehetasunez betea eskaintzeko.
+              </p>
+              <p>
+                Maison Imanolek berotasuna eta diseinua uztartzen ditu, une
+                bereziak nahiz eguneroko otorduak paregabe bihurtzeko.
+              </p>
+            </div>
+          </details>
+
+          <details class="akordeoi-elementua">
+            <summary>Esperientzia</summary>
+            <div class="akordeoi-edukia">
+              <p>
+                Gure karta APIarekin konektatuta dago eta datu-basetik
+                zuzenean elikatzen da, eguneratutako informazioa beti eskura
+                izan dezazun.
+              </p>
+              <p>
+                Diseinua mugikor, tablet eta ordenagailuetara egokitzen da,
+                nabigazio argia eta erosoa bermatzeko.
+              </p>
+            </div>
+          </details>
+
+          <details class="akordeoi-elementua">
+            <summary>Kontaktua eta erreserbak</summary>
+            <div class="akordeoi-edukia">
+              <p><strong>Helbidea:</strong> Kale Nagusia 123, Hiria</p>
+              <p><strong>Telefonoa:</strong> +34 600 000 000</p>
+              <p><strong>Posta elektronikoa:</strong> kaixo@maisonimanol.com</p>
+              <p><strong>Ordutegia:</strong> Asteartea eta Igandea artean, 13:00 - 23:00</p>
+            </div>
+          </details>
+        </div>
+      </section>
+    </section>
+
+    <section class="pantaila pantaila-karta" id="karta" data-pantaila="karta" hidden>
+      <div class="karta-pantaila-barrua karta-paper-azala">
+        <div class="karta-pantaila-goiburua">
+          <div>
+            <p class="goiburuxka">Gure karta</p>
+            <h2>Karta osoa</h2>
+            <p class="karta-azalpena">
+              Kategoriaz antolatutako plater guztiak, modu argiago eta
+              dotoreagoan aurkeztuta.
+            </p>
+          </div>
+          <a class="botoia botoia-bigarrena botoia-itzuli" href="#hasiera" data-pantaila-helburua="hasiera">
+            Hasierara Itzuli
+          </a>
+        </div>
+
+        <div class="karta-egoera" id="karta-egoera">
+          Kartaren egitura kargatzen...
+        </div>
+
+        <div class="karta-sarea" id="karta-edukiontzia" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="oinekoa">
+    <p>Maison Imanol © 2026. Etorkizuneko API integraziorako prestatutako web oinarria.</p>
+  </footer>
+
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
