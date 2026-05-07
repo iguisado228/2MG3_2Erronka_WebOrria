@@ -1,6 +1,9 @@
 const kartaEdukiontzia = document.querySelector("#karta-edukiontzia");
 const kartaEgoera = document.querySelector("#karta-egoera");
-const API_KARTA_HELBIDEA = "http://192.168.10.5:5005/api/karta";
+const API_KARTA_HELBIDEA_KANDIDATUAK = [
+  "http://192.168.10.5:5005/api/karta",
+  "http://192.168.115.175:5005/api/karta"
+];
 const AZKEN_UNITATEAK_MUGA = 3;
 const pantailak = document.querySelectorAll("[data-pantaila]");
 const pantailaLoturak = document.querySelectorAll("[data-pantaila-helburua]");
@@ -219,19 +222,25 @@ async function kargatuKarta() {
 
   kartaEgoera.textContent = "Karta datu-basetik kargatzen...";
 
-  try {
-    const erantzuna = await fetch(API_KARTA_HELBIDEA);
+  let azkenErrorea = null;
+  for (const helbidea of API_KARTA_HELBIDEA_KANDIDATUAK) {
+    try {
+      const erantzuna = await fetch(helbidea, { cache: "no-store" });
+      if (!erantzuna.ok) {
+        azkenErrorea = new Error(`API erantzun okerra (${helbidea} ${erantzuna.status})`);
+        continue;
+      }
 
-    if (!erantzuna.ok) {
-      throw new Error("API erantzun okerra");
+      const platerak = await erantzuna.json();
+      erakutsiKarta(platerak);
+      return;
+    } catch (errorea) {
+      azkenErrorea = errorea;
     }
-
-    const platerak = await erantzuna.json();
-    erakutsiKarta(platerak);
-  } catch (errorea) {
-    console.error("Errorea karta kargatzean:", errorea);
-    erakutsiErrorea();
   }
+
+  console.error("Errorea karta kargatzean:", azkenErrorea);
+  erakutsiErrorea();
 }
 
 pantailaLoturak.forEach((lotura) => {
