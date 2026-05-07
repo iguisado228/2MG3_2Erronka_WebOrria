@@ -40,7 +40,15 @@ function aldatuPantaila(pantailaIzena) {
     lotura.setAttribute("aria-current", aktiboa ? "page" : "false");
   });
 
-  document.body.classList.toggle("menu-irekita", pantailaIzena === "karta");
+  document.body.classList.toggle("menu-irekita", pantailaIzena === "karta" || pantailaIzena === "jokoa");
+
+  if (pantailaIzena === "jokoa") {
+    const egoera = document.querySelector("#jokoa-egoera");
+    const iframe = document.querySelector("#jokoa iframe");
+    const fileMode = window.location.protocol === "file:";
+    if (egoera) egoera.hidden = !fileMode;
+    if (iframe) iframe.hidden = fileMode;
+  }
 }
 
 function eguneratuAkordeoiAltura(elementua, edukia, barrua) {
@@ -235,11 +243,14 @@ pantailaLoturak.forEach((lotura) => {
 
     gertaera.preventDefault();
     aldatuPantaila(helburua);
+    history.replaceState(null, "", `#${helburua}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 });
 
-const hasierakoPantaila = window.location.hash === "#karta" ? "karta" : "hasiera";
+const hash = window.location.hash;
+const hasierakoPantaila =
+  hash === "#karta" ? "karta" : hash === "#jokoa" ? "jokoa" : "hasiera";
 aldatuPantaila(hasierakoPantaila);
 prestatuAkordeoiak();
 kargatuKarta();
